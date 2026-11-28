@@ -1,0 +1,31 @@
+name: validate
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shell: [powershell, pwsh]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check script parser compatibility
+        shell: cmd
+        run: ${{ matrix.shell }} -NoProfile -ExecutionPolicy Bypass -File .\tests\Test-Parser.ps1
+      - name: Test pure logic and encoding
+        shell: cmd
+        run: ${{ matrix.shell }} -NoProfile -ExecutionPolicy Bypass -File .\tests\Test-PureLogic.ps1
+      - name: Test Windows shortcut COM without UAC
+        shell: cmd
+        run: ${{ matrix.shell }} -NoProfile -ExecutionPolicy Bypass -File .\tests\Test-ShortcutCom.ps1
+      - name: Test repository root CLI dispatcher
+        shell: cmd
+        run: ${{ matrix.shell }} -NoProfile -ExecutionPolicy Bypass -File .\tests\Test-Cli.ps1
+      - name: Test fixed-task metadata
+        shell: cmd
+        run: ${{ matrix.shell }} -NoProfile -ExecutionPolicy Bypass -File .\tests\Test-TaskMetadata.ps1

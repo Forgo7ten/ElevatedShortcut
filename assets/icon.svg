@@ -1,0 +1,174 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="512" height="512"
+     viewBox="0 0 512 512">
+
+  <defs>
+    <!-- 蓝色快捷方式底板 -->
+    <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0878F9"/>
+      <stop offset="55%" stop-color="#0864DB"/>
+      <stop offset="100%" stop-color="#0349A9"/>
+    </linearGradient>
+
+    <!-- 时钟背景 -->
+    <linearGradient id="clock" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#EAF3FF"/>
+    </linearGradient>
+
+    <!-- 齿轮 -->
+    <linearGradient id="gear" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#A5D3FF"/>
+      <stop offset="100%" stop-color="#65A9F0"/>
+    </linearGradient>
+
+    <!-- 盾牌金色 -->
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFE34A"/>
+      <stop offset="55%" stop-color="#FFC400"/>
+      <stop offset="100%" stop-color="#F2A000"/>
+    </linearGradient>
+
+    <!-- 盾牌裁剪 -->
+    <clipPath id="shieldClip">
+      <path d="
+        M385 313
+        C411 332 438 345 461 351
+        V386
+        C461 427 433 457 385 480
+        C337 457 309 427 309 386
+        V351
+        C332 345 359 332 385 313 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- 快捷方式蓝色底板 -->
+  <rect x="42" y="118"
+        width="386" height="354"
+        rx="76"
+        fill="url(#tile)"
+        stroke="#073B7A"
+        stroke-width="16"/>
+
+  <!-- 快捷方式箭头 -->
+  <path d="
+    M151 420
+    C154 367 185 315 239 270
+    L211 270
+    C200 270 192 262 192 251
+    C192 240 200 232 211 232
+    H306
+    C317 232 325 240 325 251
+    V346
+    C325 357 317 365 306 365
+    C295 365 287 357 287 346
+    V296
+    C246 332 222 369 213 405
+    C209 424 197 437 180 437
+    C163 437 149 429 151 420 Z"
+    fill="#FFFFFF"/>
+
+  <!-- 时钟外圈 -->
+  <circle cx="386" cy="140" r="82"
+          fill="url(#clock)"
+          stroke="#073B7A"
+          stroke-width="13"/>
+
+  <!-- 时钟指针 -->
+  <path d="M386 140 V95 M386 140 L350 174"
+        fill="none"
+        stroke="#0A407F"
+        stroke-width="13"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+  <circle cx="386" cy="140" r="10"
+          fill="#0A407F"/>
+
+  <!-- 任务计划程序齿轮 -->
+  <path d="
+    M415 174
+    H433
+    L439 191
+    Q447 193 454 198
+    L470 191
+    L482 203
+    L475 219
+    Q480 226 482 234
+    L498 241
+    V259
+    L482 266
+    Q480 274 475 281
+    L482 297
+    L470 309
+    L454 302
+    Q447 307 439 309
+    L433 326
+    H415
+    L409 309
+    Q401 307 394 302
+    L378 309
+    L366 297
+    L373 281
+    Q368 274 366 266
+    L350 259
+    V241
+    L366 234
+    Q368 226 373 219
+    L366 203
+    L378 191
+    L394 198
+    Q401 193 409 191
+    Z"
+    fill="url(#gear)"
+    stroke="#073B7A"
+    stroke-width="9"
+    stroke-linejoin="round"/>
+
+  <!-- 齿轮中心 -->
+  <circle cx="424" cy="250" r="21"
+          fill="#F8FBFF"
+          stroke="#073B7A"
+          stroke-width="9"/>
+
+  <!-- 管理员盾牌外框 -->
+  <path d="
+    M385 288
+    C414 311 450 327 482 334
+    V386
+    C482 436 447 473 385 498
+    C323 473 288 436 288 386
+    V334
+    C320 327 356 311 385 288 Z"
+    fill="#FFFFFF"
+    stroke="#073B7A"
+    stroke-width="14"
+    stroke-linejoin="round"/>
+
+  <!-- 盾牌内部四象限 -->
+  <g clip-path="url(#shieldClip)">
+    <rect x="290" y="300" width="190" height="200"
+          fill="url(#gold)"/>
+
+    <!-- 右上 -->
+    <rect x="385" y="300" width="100" height="105"
+          fill="#F5A900"/>
+
+    <!-- 左下 -->
+    <rect x="290" y="405" width="95" height="100"
+          fill="#F3A600"/>
+
+    <!-- 右下 -->
+    <rect x="385" y="405" width="100" height="100"
+          fill="#FFD21F"/>
+
+    <!-- 象限分割线 -->
+    <path d="M385 313 V490 M304 405 H466"
+          fill="none"
+          stroke="#E29B00"
+          stroke-width="2"
+          opacity="0.55"/>
+  </g>
+
+</svg>

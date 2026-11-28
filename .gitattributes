@@ -1,0 +1,11 @@
+# PowerShell: normalize in Git, use platform-native working-tree line endings.
+*.ps1 text
+
+# Windows-specific scripts: retain CRLF.
+*.vbs text eol=crlf
+*.bat text eol=crlf
+
+# Cross-platform text files: always use LF.
+*.md text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
